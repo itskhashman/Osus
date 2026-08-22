@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { useLocale } from '@/lib/LocaleProvider';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useLocale } from "@/lib/LocaleProvider";
 
 const NAV = [
-  { key: 'home', href: '/' },
-  { key: 'products', href: '/products' },
-  { key: 'services', href: '/services' },
-  { key: 'partners', href: '/partners' },
-  { key: 'projects', href: '/projects' },
-  { key: 'company', href: '/company' },
+  { key: "home", href: "/" },
+  { key: "products", href: "/products" },
+  { key: "services", href: "/services" },
+  { key: "partners", href: "/partners" },
+  { key: "projects", href: "/projects" },
+  { key: "company", href: "/company" },
 ];
 
 export default function Header() {
@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/" aria-label="OSUS home" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/osus-logo-clear.png"
+            src={`${process.env.NODE_ENV === "production" ? "/Osus" : ""}/assets/osus-logo-clear.png`}
             alt="OSUS"
             className="block h-10 w-auto"
           />
@@ -34,7 +34,7 @@ export default function Header() {
         <nav className="hidden items-center gap-7 font-sans text-sm font-semibold md:flex">
           {NAV.map(({ key, href }) => {
             const active =
-              href === '/' ? pathname === '/' : pathname.startsWith(href);
+              href === "/" ? pathname === "/" : pathname.startsWith(href);
 
             return (
               <Link
@@ -42,8 +42,8 @@ export default function Header() {
                 href={href}
                 className={
                   active
-                    ? 'text-amber-700'
-                    : 'text-slate-900 transition hover:text-amber-700'
+                    ? "text-amber-700"
+                    : "text-slate-900 transition hover:text-amber-700"
                 }
               >
                 {t.nav[key]}
@@ -76,7 +76,7 @@ export default function Header() {
             aria-expanded={open}
             className="flex h-10 w-10 items-center justify-center rounded-sm border border-slate-900 text-xl text-slate-900 md:hidden"
           >
-            {open ? '×' : '☰'}
+            {open ? "×" : "☰"}
           </button>
         </div>
       </div>
@@ -84,7 +84,7 @@ export default function Header() {
       {open && (
         <nav
           className={`flex flex-col gap-3 border-t border-slate-900/[0.08] px-8 pb-5 pt-3 font-sans text-sm font-semibold md:hidden ${
-            isRtl ? 'text-right' : 'text-left'
+            isRtl ? "text-right" : "text-left"
           }`}
         >
           {NAV.map(({ key, href }) => (
