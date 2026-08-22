@@ -1,5 +1,6 @@
-import { colors } from '@/lib/theme';
-import PlaceholderImage from './PlaceholderImage';
+import { colors } from "@/lib/theme";
+import PlaceholderImage from "./PlaceholderImage";
+import { assetPath } from "@/lib/assetPath";
 
 export default function ProductCard({
   product,
@@ -11,7 +12,10 @@ export default function ProductCard({
       className="overflow-hidden rounded-sm border border-slate-200"
       style={{ background }}
     >
-      <PlaceholderImage label={product.name} height={imageHeight} />
+      <img
+        src={assetPath("/assets/pumps.png")}
+        className="h-80 w-full border border-slate-900/12 bg-cover bg-center sm:h-56"
+      />
 
       <div className="p-6">
         <h3 className="mb-2 font-serif text-[22px] text-slate-900">

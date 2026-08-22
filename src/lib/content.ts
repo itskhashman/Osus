@@ -1,8 +1,3 @@
-/**
- * All copy lives here, keyed by locale. Components never contain literal
- * strings — they read t.<key>, so adding a third language means adding
- * one object below.
- */
 export const locales = ["en", "ar"];
 
 export const dictionary = {
@@ -18,7 +13,7 @@ export const dictionary = {
       partners: "Partners",
       projects: "Projects",
       certificates: "Certificates",
-      company: "Company",
+      company: "About Us",
       contact: "Contact",
     },
     hero: {
@@ -36,7 +31,7 @@ export const dictionary = {
       { value: "KSA", label: "PROJECTS NATIONWIDE" },
     ],
     company: {
-      kicker: "COMPANY PROFILE",
+      kicker: "ABOUT US",
       title: "Engineering partners since 2006",
       body: "OSUS Alroqey Ltd. Co. is a specialized mechanical systems company established in 2024, carrying forward OSUS Al Atheer, founded in 2006. Our divisions cover Pumps & Valves and full-scope HVAC engineering, from design through installation and commissioning.",
       readMore: "Read more",
@@ -194,12 +189,13 @@ export const dictionary = {
     },
     contact: {
       title: "Contact OSUS",
-      address: "Riyadh, Saudi Arabia",
-      email: "info@osus-alroqey.com",
+      address: "Jeddah, Saudi Arabia",
+      email: "info@osus-ro.com",
       phone: "+966 XX XXX XXXX",
       form: {
         name: "Your name",
         email: "Email address",
+        phone: "Phone number",
         message: "Tell us about your project",
         send: "SEND MESSAGE",
       },
@@ -208,7 +204,7 @@ export const dictionary = {
     footer: {
       tagline:
         "OSUS Alroqey Ltd. Co. — your engineering solutions partner in pumps, valves, control systems and HVAC.",
-      company: "COMPANY",
+      company: "ABOUT US",
       solutions: "SOLUTIONS",
       getInTouch: "GET IN TOUCH",
       copyright: "© 2026 OSUS Alroqey Ltd. Co. All rights reserved.",
@@ -228,7 +224,7 @@ export const dictionary = {
       partners: "الشركاء",
       projects: "المشاريع",
       certificates: "الشهادات",
-      company: "الشركة",
+      company: "من نحن",
       contact: "تواصل معنا",
     },
     hero: {
@@ -246,7 +242,7 @@ export const dictionary = {
       { value: "KSA", label: "مشاريع بجميع المناطق" },
     ],
     company: {
-      kicker: "ملف الشركة",
+      kicker: "من نحن",
       title: "شريككم الهندسي منذ 2006",
       body: "شركة أسس الروقي المحدودة شركة متخصصة في الأنظمة الميكانيكية، تأسست عام 2024 استمرارًا لشركة أسس الأثير المؤسسة عام 2006. تشمل أقسامنا المضخات والصمامات وأعمال التكييف الكاملة.",
       readMore: "اقرأ أكثر",
@@ -395,12 +391,13 @@ export const dictionary = {
     },
     contact: {
       title: "اتصل بأسس",
-      address: "الرياض، المملكة العربية السعودية",
-      email: "info@osus-alroqey.com",
+      address: "جدة, المملكة العربية السعودية",
+      email: "info@osus-ro.com",
       phone: "+966 XX XXX XXXX",
       form: {
         name: "اسمك",
         email: "البريد الإلكتروني",
+        phone: "رقم الجوال",
         message: "أخبرنا عن مشروعك",
         send: "إرسال الرسالة",
       },
@@ -408,17 +405,16 @@ export const dictionary = {
     cta: { title: "لنبدأ في هندسة مشروعكم القادم.", button: "تواصل مع أسس" },
     footer: {
       tagline:
-        "شركة أسس الروقي المحدودة — شريككم الهندسي في المضخات والصمامات وأنظمة التحكم والتكييف.",
-      company: "الشركة",
+        "شركة أسس الرقي المحدودة — شريككم الهندسي في المضخات والصمامات وأنظمة التحكم والتكييف.",
+      company: "من نحن",
       solutions: "الحلول",
       getInTouch: "تواصل معنا",
-      copyright: "© 2026 شركة أسس الروقي المحدودة. جميع الحقوق محفوظة.",
+      copyright: "© 2026 شركة أسس الرقي المحدودة. جميع الحقوق محفوظة.",
       site: "www.osus-ro.com",
     },
   },
 };
 
-/** Shared imagery (locale-independent). */
 export const images = {
   hero: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=650&fit=crop",
   company:

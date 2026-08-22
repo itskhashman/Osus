@@ -10,12 +10,12 @@ export default function CompanyPage() {
   return (
     <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-8 pb-24 pt-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
       <div
-        className="h-[420px] w-full rounded-sm bg-cover bg-center"
+        className="h-105 w-full rounded-sm bg-cover bg-center"
         style={{ backgroundImage: `url(${images.company})` }}
       />
 
       <div className="flex flex-col gap-4 mb-4">
-        <PageTitle size={220}>{t.products.title}</PageTitle>
+        <PageTitle size={220}>{t.company.title}</PageTitle>
         <p className="mt-8 font-sans text-base leading-[1.7] text-slate-600">
           {t.company.body}
         </p>

@@ -14,7 +14,7 @@ export default function StatsBar() {
               {stat.value}
             </div>
 
-            <div className="mt-1.5 font-sans text-xs font-semibold tracking-[0.05em] text-slate-300">
+            <div className="mt-1.5 font-sans text-xs font-semibold tracking-wider text-slate-300">
               {stat.label}
             </div>
           </div>

@@ -1,8 +1,3 @@
-/**
- * Project references. `sector` keys match dictionary.projects.sectors so the
- * filter chips and card labels stay in sync across locales.
- * Replace this array with a CMS/API fetch when the client has one.
- */
 export const projects = [
   {
     id: 'sedra-1b',

@@ -4,21 +4,26 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { dictionary } from './content';
 import { fonts } from './theme';
 
-const LocaleContext = createContext(null);
+type Locale = keyof typeof dictionary;
+type LocaleContextValue = {
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+  toggle: () => void;
+  t: (typeof dictionary)[Locale];
+  dir: string;
+  isRtl: boolean;
+};
+
+const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 const STORAGE_KEY = 'osus.locale';
 
-/**
- * Wraps the app and owns the active locale. Persists the choice, and mirrors
- * dir/lang onto <html> so native RTL layout, form controls and scrollbars
- * flip with the language.
- */
 export function LocaleProvider({ children }) {
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState<Locale>('en');
 
   useEffect(() => {
     const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved && dictionary[saved]) setLocale(saved);
+    if (saved && saved in dictionary) setLocale(saved as Locale);
   }, []);
 
   useEffect(() => {

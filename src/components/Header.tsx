@@ -10,8 +10,8 @@ const NAV = [
   { key: "home", href: "/" },
   { key: "products", href: "/products" },
   { key: "services", href: "/services" },
-  { key: "partners", href: "/partners" },
   { key: "projects", href: "/projects" },
+  { key: "partners", href: "/partners" },
   { key: "certificates", href: "/certificates" },
   { key: "company", href: "/company" },
 ];
@@ -27,18 +27,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-900/[0.08] bg-[#f4f1eb]/95 backdrop-blur-[8px]">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-8 py-4">
+    <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-[#f4f1eb]/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-8 py-5">
         <Link href="/" aria-label="OSUS home" className="flex items-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={assetPath("/assets/osus-logo-clear.png")}
             alt="OSUS"
-            className="block h-10 w-auto"
+            className="block h-12 w-auto"
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 font-sans text-sm font-semibold md:flex">
+        <nav className="hidden items-center gap-8 font-sans text-base font-bold md:flex">
           {NAV.map(({ key, href }) => {
             const active =
               href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -47,7 +46,7 @@ export default function Header() {
               <Link
                 key={key}
                 href={href}
-                className={`font-sans text-sm font-semibold ${linkClass(active)}`}
+                className={`font-sans text-base font-bold ${linkClass(active)}`}
               >
                 {t.nav[key] || key.charAt(0).toUpperCase() + key.slice(1)}
               </Link>
@@ -55,11 +54,11 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-4">
           <button
             type="button"
             onClick={toggle}
-            className="flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-[9px] font-sans text-xs font-bold tracking-[0.03em] text-white"
+            className="flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 font-sans text-sm font-bold tracking-[0.03em] text-white"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
             {t.langToggle}
@@ -67,7 +66,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="hidden rounded-sm bg-amber-700 px-5 py-[11px] font-sans text-[13px] font-bold leading-none text-slate-900 transition hover:bg-amber-800 hover:!text-white sm:block"
+            className="hidden rounded-sm bg-amber-700 px-6 py-3.5 font-sans text-sm font-bold leading-none text-slate-900 transition hover:bg-amber-800 hover:text-white! sm:block"
           >
             {t.contactCta}
           </Link>
@@ -77,7 +76,7 @@ export default function Header() {
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle navigation"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-sm border border-slate-900 text-xl text-slate-900 md:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-sm border-2 border-slate-900 text-2xl font-bold text-slate-900 md:hidden"
           >
             {open ? "×" : "☰"}
           </button>
@@ -86,7 +85,7 @@ export default function Header() {
 
       {open && (
         <nav
-          className={`flex flex-col gap-3 border-t border-slate-900/[0.08] px-8 pb-5 pt-3 font-sans text-sm font-semibold md:hidden ${
+          className={`flex flex-col gap-4 border-t border-slate-900/8 px-8 pb-6 pt-4 font-sans text-base font-bold md:hidden ${
             isRtl ? "text-right" : "text-left"
           }`}
         >
@@ -99,7 +98,7 @@ export default function Header() {
                 key={key}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`font-sans text-sm font-semibold ${linkClass(active)}`}
+                className={`font-sans text-base font-bold ${linkClass(active)}`}
               >
                 {t.nav[key] || key.charAt(0).toUpperCase() + key.slice(1)}
               </Link>

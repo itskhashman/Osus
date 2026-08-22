@@ -10,26 +10,25 @@ export default function Footer() {
   const { t } = useLocale();
 
   return (
-    <footer className="bg-slate-900 px-8 pb-8 pt-[70px]">
+    <footer className="bg-slate-900 px-8 pb-8 pt-17.5">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={assetPath("/assets/osus-logo-light.png")}
             alt="OSUS"
-            className="mb-4 block h-[38px] w-auto"
+            className="mb-4 block h-9.5 w-auto"
           />
 
-          <p className="max-w-[260px] font-sans text-[13px] leading-[1.6] text-white/75">
+          <p className="max-w-65 font-sans text-[13px] leading-[1.6] text-white/75">
             {t.footer.tagline}
           </p>
 
-          <a
+          <Link
             href="https://www.osus-ro.com"
-            className="mt-3 inline-block font-sans text-[13px] font-semibold text-[var(--osus-gold)] hover:text-[var(--osus-gold-light)]"
+            className="mt-3 inline-block font-sans text-[13px] font-semibold text-white! hover:text-(--osus-gold-light)!"
           >
             {t.footer.site}
-          </a>
+          </Link>
         </div>
 
         <div>
@@ -39,16 +38,13 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2.5">
             <Link href="/company" className={linksClass}>
-              {t.nav.company || "Company"}
+              {t.nav.company || "About Us"}
             </Link>
 
             <Link href="/projects" className={linksClass}>
               {t.nav.projects || "Projects"}
             </Link>
 
-            <Link href="/partners" className={linksClass}>
-              {t.nav.partners || "Partners"}
-            </Link>
             <Link href="/partners" className={linksClass}>
               {t.nav.partners || "Partners"}
             </Link>

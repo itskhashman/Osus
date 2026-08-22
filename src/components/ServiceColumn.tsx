@@ -10,7 +10,7 @@ export default function ServiceColumn({ heading, items }) {
       {items.map((item) => (
         <div
           key={item.title}
-          className="flex items-start gap-3.5 border-t border-slate-900/[0.12] py-4"
+          className="flex items-start gap-3.5 border-t border-slate-900/12 py-4"
         >
           <Diamond size={8} style={{ marginTop: 6 }} />
 
@@ -19,7 +19,7 @@ export default function ServiceColumn({ heading, items }) {
               {item.title}
             </div>
 
-            <div className="mt-1 font-sans text-[13px] leading-[1.5] text-slate-600">
+            <div className="mt-1 font-sans text-[13px] leading-normal text-slate-600">
               {item.desc}
             </div>
           </div>

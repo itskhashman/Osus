@@ -12,7 +12,7 @@ export default function CertificatesPage() {
       <div className="flex flex-col gap-4 mb-4">
         <PageTitle>{t.certificates.title}</PageTitle>
 
-        <p className="mt-3 max-w-[560px] font-sans text-[15px] leading-[1.6] text-slate-600">
+        <p className="mt-3 max-w-140 font-sans text-[15px] leading-[1.6] text-slate-600">
           {t.certificates.body}
         </p>
       </div>
@@ -24,7 +24,7 @@ export default function CertificatesPage() {
             className="overflow-hidden rounded-sm border border-slate-200 bg-white"
           >
             <div
-              className="h-[220px] w-full bg-cover bg-center"
+              className="h-55 w-full bg-cover bg-center"
               style={{ backgroundImage: `url(${cert.img})` }}
             />
 

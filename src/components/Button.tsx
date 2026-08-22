@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 
 const variants = {
   primary:
@@ -9,10 +10,19 @@ const variants = {
     'border-[1.5px] border-slate-900 bg-transparent text-slate-900 hover:bg-slate-900 hover:!text-white',
   dark:
     'bg-slate-900 !text-white  hover:bg-slate-800 hover:!text-amber-700 ',
+  ghost: '',
 };
 
 const base =
   'inline-block rounded-sm font-sans text-sm font-bold tracking-[0.02em] transition';
+
+type ButtonProps = {
+  href?: string;
+  variant?: keyof typeof variants;
+  children: ReactNode;
+  onClick?: () => void;
+  className?: string;
+};
 
 export default function Button({
   href,
@@ -20,7 +30,7 @@ export default function Button({
   children,
   onClick,
   className = '',
-}) {
+}: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${
     variant === 'ghost' ? '' : 'px-7 py-4'
   } ${className}`;
