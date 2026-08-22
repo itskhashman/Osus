@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLocale } from "@/lib/LocaleProvider";
+import { assetPath } from '@/lib/assetPath';
 
 const NAV = [
   { key: "home", href: "/" },
@@ -25,7 +26,7 @@ export default function Header() {
         <Link href="/" aria-label="OSUS home" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`${process.env.NODE_ENV === "production" ? "/Osus" : ""}/assets/osus-logo-clear.png`}
+            src={assetPath("/assets/osus-logo-clear.png")}
             alt="OSUS"
             className="block h-10 w-auto"
           />
@@ -64,7 +65,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="hidden rounded-sm bg-amber-700 px-5 py-[11px] font-sans text-[13px] font-bold leading-none text-slate-900 transition hover:bg-amber-800 sm:block"
+            className="hidden rounded-sm bg-amber-700 px-5 py-[11px] font-sans text-[13px] font-bold leading-none text-slate-900 transition hover:bg-amber-800 hover:!text-white sm:block"
           >
             {t.contactCta}
           </Link>

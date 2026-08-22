@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useLocale } from '@/lib/LocaleProvider';
-import { images } from '@/lib/content';
-import PageTitle from '@/components/PageTitle';
+import { useLocale } from "@/lib/LocaleProvider";
+import { images } from "@/lib/content";
+import PageTitle from "@/components/PageTitle";
 
 export default function CompanyPage() {
   const { t } = useLocale();
@@ -14,19 +14,18 @@ export default function CompanyPage() {
         style={{ backgroundImage: `url(${images.company})` }}
       />
 
-      <div>
-        <PageTitle size={44}>{t.company.title}</PageTitle>
-
-        <p className="mt-5 font-sans text-base leading-[1.7] text-slate-600">
+      <div className="flex flex-col gap-3">
+        <PageTitle size={220}>{t.products.title}</PageTitle>
+        <p className="mt-8 font-sans text-base leading-[1.7] text-slate-600">
           {t.company.body}
         </p>
 
-        <blockquote className="mt-7 border-s-amber-700 bg-white px-7 py-6">
+        <blockquote className="flex flex-col mt-7 border-s-amber-700 bg-white px-7 py-6 gap-4">
           <p className="font-sans text-base font-medium italic leading-[1.6] text-slate-900">
             &ldquo;{t.company.quote}&rdquo;
           </p>
 
-          <p className="mt-3 font-sans text-[13px] font-bold tracking-[0.03em] text-slate-500">
+          <p className="font-sans text-[13px] font-bold tracking-[0.03em] text-slate-500">
             {t.company.quoteAuthor}
           </p>
         </blockquote>

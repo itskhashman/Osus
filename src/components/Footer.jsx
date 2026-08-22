@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLocale } from '@/lib/LocaleProvider';
+import { assetPath } from '@/lib/assetPath';
 
 const linksClass =
   'font-sans text-[13px] text-[var(--on-dark-muted)] transition hover:text-white';
@@ -15,7 +16,7 @@ export default function Footer() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/osus-logo-light.png"
+             src={assetPath('/assets/osus-logo-light.png')}
             alt="OSUS"
             className="mb-4 block h-[38px] w-auto"
           />
