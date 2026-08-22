@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useLocale } from '@/lib/LocaleProvider';
-import { assetPath } from '@/lib/assetPath';
+import Link from "next/link";
+import { useLocale } from "@/lib/LocaleProvider";
+import { assetPath } from "@/lib/assetPath";
 
 const linksClass =
-  'font-sans text-[13px] text-[var(--on-dark-muted)] transition hover:text-white';
-
+  'font-sans text-[13px] !text-white/80 transition hover:!text-[var(--osus-gold)]';
 export default function Footer() {
   const { t } = useLocale();
 
@@ -16,18 +15,18 @@ export default function Footer() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-             src={assetPath('/assets/osus-logo-light.png')}
+            src={assetPath("/assets/osus-logo-light.png")}
             alt="OSUS"
             className="mb-4 block h-[38px] w-auto"
           />
 
-          <p className="max-w-[260px] font-sans text-[13px] leading-[1.6] text-slate-400">
+          <p className="max-w-[260px] font-sans text-[13px] leading-[1.6] text-white/75">
             {t.footer.tagline}
           </p>
 
           <a
             href="https://www.osus-ro.com"
-            className="mt-3 inline-block font-sans text-[13px] font-semibold text-amber-700 hover:text-amber-600"
+            className="mt-3 inline-block font-sans text-[13px] font-semibold text-[var(--osus-gold)] hover:text-[var(--osus-gold-light)]"
           >
             {t.footer.site}
           </a>
@@ -40,13 +39,15 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2.5">
             <Link href="/company" className={linksClass}>
-              {t.nav.company}
+              {t.nav.company || "Company"}
             </Link>
+
             <Link href="/projects" className={linksClass}>
-              {t.nav.projects}
+              {t.nav.projects || "Projects"}
             </Link>
+
             <Link href="/partners" className={linksClass}>
-              {t.nav.partners}
+              {t.nav.partners || "Partners"}
             </Link>
           </div>
         </div>
@@ -58,10 +59,11 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2.5">
             <Link href="/products" className={linksClass}>
-              {t.nav.products}
+              {t.nav.products || "Products"}
             </Link>
+
             <Link href="/services" className={linksClass}>
-              {t.nav.services}
+              {t.nav.services || "Services"}
             </Link>
           </div>
         </div>
@@ -71,7 +73,7 @@ export default function Footer() {
             {t.footer.getInTouch}
           </div>
 
-          <p className="font-sans text-[13px] leading-[1.7] text-slate-400">
+          <p className="font-sans text-[13px] leading-[1.7] text-white/75">
             {t.contact.address}
             <br />
             {t.contact.email}
@@ -81,7 +83,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-7xl border-t border-slate-700 pt-6 font-sans text-xs text-slate-500">
+      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 font-sans text-xs text-white/50">
         {t.footer.copyright}
       </div>
     </footer>
