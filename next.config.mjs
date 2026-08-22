@@ -1,8 +1,12 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
+    unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === 'production'
+    ? '/YOUR_REPOSITORY_NAME'
+    : '',
 };
 
 export default nextConfig;
