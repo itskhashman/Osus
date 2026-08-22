@@ -14,7 +14,7 @@ export default function CompanyPage() {
         style={{ backgroundImage: `url(${images.company})` }}
       />
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4 mb-4">
         <PageTitle size={220}>{t.products.title}</PageTitle>
         <p className="mt-8 font-sans text-base leading-[1.7] text-slate-600">
           {t.company.body}

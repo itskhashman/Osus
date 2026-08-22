@@ -5,7 +5,7 @@ import { useLocale } from "@/lib/LocaleProvider";
 import { assetPath } from "@/lib/assetPath";
 
 const linksClass =
-  'font-sans text-[13px] !text-white/80 transition hover:!text-[var(--osus-gold)]';
+  "font-sans text-[13px] !text-white/80 transition hover:!text-[var(--osus-gold)]";
 export default function Footer() {
   const { t } = useLocale();
 
@@ -46,6 +46,9 @@ export default function Footer() {
               {t.nav.projects || "Projects"}
             </Link>
 
+            <Link href="/partners" className={linksClass}>
+              {t.nav.partners || "Partners"}
+            </Link>
             <Link href="/partners" className={linksClass}>
               {t.nav.partners || "Partners"}
             </Link>

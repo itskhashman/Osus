@@ -1,19 +1,21 @@
-'use client';
+"use client";
 
-import { useLocale } from '@/lib/LocaleProvider';
-import Section from '@/components/Section';
-import PageTitle from '@/components/PageTitle';
+import { useLocale } from "@/lib/LocaleProvider";
+import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 
 export default function CertificatesPage() {
   const { t } = useLocale();
 
   return (
     <Section>
-      <PageTitle>{t.certificates.title}</PageTitle>
+      <div className="flex flex-col gap-4 mb-4">
+        <PageTitle>{t.certificates.title}</PageTitle>
 
-      <p className="mt-3 max-w-[560px] font-sans text-[15px] leading-[1.6] text-slate-600">
-        {t.certificates.body}
-      </p>
+        <p className="mt-3 max-w-[560px] font-sans text-[15px] leading-[1.6] text-slate-600">
+          {t.certificates.body}
+        </p>
+      </div>
 
       <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {t.certificates.items.map((cert) => (

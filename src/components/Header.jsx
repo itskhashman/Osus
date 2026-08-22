@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLocale } from "@/lib/LocaleProvider";
-import { assetPath } from '@/lib/assetPath';
+import { assetPath } from "@/lib/assetPath";
 
 const NAV = [
   { key: "home", href: "/" },
@@ -12,8 +12,14 @@ const NAV = [
   { key: "services", href: "/services" },
   { key: "partners", href: "/partners" },
   { key: "projects", href: "/projects" },
+  { key: "certificates", href: "/certificates" },
   { key: "company", href: "/company" },
 ];
+
+const linkClass = (active) =>
+  active
+    ? "!text-[var(--osus-gold)]"
+    : "text-slate-900 transition hover:!text-[var(--osus-gold)]";
 
 export default function Header() {
   const { t, toggle, isRtl } = useLocale();
@@ -41,13 +47,9 @@ export default function Header() {
               <Link
                 key={key}
                 href={href}
-                className={
-                  active
-                    ? "text-amber-700"
-                    : "text-slate-900 transition hover:text-amber-700"
-                }
+                className={`font-sans text-sm font-semibold ${linkClass(active)}`}
               >
-                {t.nav[key]}
+                {t.nav[key] || key.charAt(0).toUpperCase() + key.slice(1)}
               </Link>
             );
           })}
@@ -88,16 +90,21 @@ export default function Header() {
             isRtl ? "text-right" : "text-left"
           }`}
         >
-          {NAV.map(({ key, href }) => (
-            <Link
-              key={key}
-              href={href}
-              onClick={() => setOpen(false)}
-              className="text-slate-900 transition hover:text-amber-700"
-            >
-              {t.nav[key]}
-            </Link>
-          ))}
+          {NAV.map(({ key, href }) => {
+            const active =
+              href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+            return (
+              <Link
+                key={key}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`font-sans text-sm font-semibold ${linkClass(active)}`}
+              >
+                {t.nav[key] || key.charAt(0).toUpperCase() + key.slice(1)}
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>

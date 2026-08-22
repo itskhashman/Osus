@@ -1,17 +1,21 @@
-'use client';
+"use client";
 
-import { useLocale } from '@/lib/LocaleProvider';
-import Section from '@/components/Section';
-import PageTitle from '@/components/PageTitle';
-import BrandTile from '@/components/BrandTile';
+import { useLocale } from "@/lib/LocaleProvider";
+import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
+import BrandTile from "@/components/BrandTile";
 
 export default function PartnersPage() {
   const { t } = useLocale();
 
   return (
     <Section>
-      <div className="mb-11 text-center">
+      <div className="flex flex-col items-center gap-4 mb-4">
         <PageTitle align="center">{t.partners.title}</PageTitle>
+
+        <p className="mt-3 font-sans text-[15px] leading-[1.6] text-slate-600">
+          {t.partners.body}
+        </p>
       </div>
 
       {t.partners.groups.map((group) => (
@@ -22,10 +26,7 @@ export default function PartnersPage() {
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {group.brands.map((brand, i) => (
-              <BrandTile
-                key={`${group.category}-${brand}-${i}`}
-                name={brand}
-              />
+              <BrandTile key={`${group.category}-${brand}-${i}`} name={brand} />
             ))}
           </div>
         </div>

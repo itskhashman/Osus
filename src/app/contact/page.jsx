@@ -1,30 +1,33 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useLocale } from '@/lib/LocaleProvider';
-import { images } from '@/lib/content';
-import PageTitle from '@/components/PageTitle';
+import { useState } from "react";
+import { useLocale } from "@/lib/LocaleProvider";
+import { images } from "@/lib/content";
+import PageTitle from "@/components/PageTitle";
 
 export default function ContactPage() {
   const { t } = useLocale();
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const update = (key) => (e) =>
     setForm((current) => ({ ...current, [key]: e.target.value }));
 
   const submit = (e) => {
     e.preventDefault();
-    console.log('contact submission', form);
+    console.log("contact submission", form);
   };
 
   const fieldClass =
-    'rounded-sm border border-slate-300 p-3.5 font-sans text-sm outline-none transition focus:border-amber-700 focus:ring-1 focus:ring-amber-700';
+    "rounded-sm border border-slate-300 p-3.5 font-sans text-sm outline-none transition focus:border-amber-700 focus:ring-1 focus:ring-amber-700";
 
   return (
     <section className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-8 pb-24 pt-16 lg:grid-cols-2">
       <div>
         <PageTitle size={44}>{t.contact.title}</PageTitle>
 
+        <p className="mt-3 max-w-[560px] font-sans text-[15px] leading-[1.6] text-slate-600">
+          {t.contact.body}
+        </p>
         <p className="mt-5 font-sans text-[15px] leading-[1.7] text-slate-600">
           {t.contact.address}
           <br />
@@ -47,7 +50,7 @@ export default function ContactPage() {
           type="text"
           placeholder={t.contact.form.name}
           value={form.name}
-          onChange={update('name')}
+          onChange={update("name")}
           className={fieldClass}
         />
 
@@ -55,7 +58,7 @@ export default function ContactPage() {
           type="email"
           placeholder={t.contact.form.email}
           value={form.email}
-          onChange={update('email')}
+          onChange={update("email")}
           className={fieldClass}
         />
 
@@ -63,7 +66,7 @@ export default function ContactPage() {
           placeholder={t.contact.form.message}
           rows={5}
           value={form.message}
-          onChange={update('message')}
+          onChange={update("message")}
           className={`${fieldClass} resize-y`}
         />
 
