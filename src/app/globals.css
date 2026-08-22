@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --osus-gold: #c99a2b;
+  --osus-gold-deep: #b8860b;
+  --osus-gold-light: #d6a72e;
+
+  --ink: #26262f;
+  --ink-raised: #32323d;
+  --ink-soft: #4a4a52;
+  --muted: #6b6a63;
+  --subtle: #8a8578;
+
+  --sand: #f4f1eb;
+  --sand-deep: #efebe3;
+  --white: #ffffff;
+
+  --on-dark: #c9c6bd;
+  --on-dark-muted: #a9a79f;
+  --on-dark-faint: #767469;
+
+  --hairline: rgba(38, 38, 47, 0.1);
+  --hairline-mid: rgba(38, 38, 47, 0.12);
+  --hairline-strong: rgba(38, 38, 47, 0.2);
+  --hairline-header: rgba(38, 38, 47, 0.08);
+  --hairline-on-dark: rgba(255, 255, 255, 0.1);
+
+  --header-bg: rgba(244, 241, 235, 0.94);
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-arabic: 'Noto Kufi Arabic', 'Inter', sans-serif;
+}
+
+/* Map existing Tailwind classes to the OSUS colour system. */
+@theme inline {
+  --color-amber-700: var(--osus-gold);
+  --color-amber-800: var(--osus-gold-deep);
+
+  --color-slate-900: var(--ink);
+  --color-slate-800: var(--ink-raised);
+  --color-slate-700: var(--ink-soft);
+  --color-slate-600: var(--muted);
+  --color-slate-500: var(--subtle);
+  --color-slate-400: var(--on-dark-muted);
+  --color-slate-300: var(--on-dark);
+  --color-slate-200: var(--hairline);
+  --color-slate-100: var(--sand-deep);
+
+  --color-white: var(--white);
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+html[lang='ar'] body {
+  font-family: var(--font-arabic);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--osus-gold);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: var(--ink);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--subtle);
+}
+
+.diamond {
+  flex: none;
+  transform: rotate(45deg);
+}
