@@ -3,7 +3,11 @@
 import { useLocale } from "@/lib/LocaleProvider";
 import Section from "@/components/Section";
 import PageTitle from "@/components/PageTitle";
-import BrandTile from "@/components/BrandTile";
+import BrandTile, {
+  getPartnerImage,
+  partnerImageFiles,
+} from "@/components/BrandTile";
+import { assetPath } from "@/lib/assetPath";
 
 export default function PartnersPage() {
   const { t } = useLocale();
@@ -25,8 +29,11 @@ export default function PartnersPage() {
           </h3>
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {group.brands.map((brand, i) => (
-              <BrandTile key={`${group.category}-${brand}-${i}`} name={brand} />
+            {partnerImageFiles.map((image) => (
+              <img
+                src={assetPath(`/assets/${image}`)}
+                className="h-full max-h-16 w-auto max-w-full object-contain"
+              />
             ))}
           </div>
         </div>

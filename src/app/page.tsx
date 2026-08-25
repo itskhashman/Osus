@@ -7,7 +7,10 @@ import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import CtaBand from "@/components/CtaBand";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import BrandTile from "@/components/BrandTile";
+import BrandTile, {
+  getPartnerImage,
+  partnerImageFiles,
+} from "@/components/BrandTile";
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +23,7 @@ import { useEffect, useState } from "react";
 import { assetPath } from "@/lib/assetPath";
 
 export default function HomePage() {
-  const { t } = useLocale();
+  const { t, locale, isRtl } = useLocale();
   const [carouselApi, setCarouselApi] = useState<{ scrollNext: () => void }>();
 
   useEffect(() => {
@@ -28,12 +31,10 @@ export default function HomePage() {
 
     const interval = window.setInterval(() => {
       carouselApi.scrollNext();
-    }, 2500);
+    }, 1100);
 
     return () => window.clearInterval(interval);
   }, [carouselApi]);
-
-  const partnerBrands = t.partners.groups.flatMap((group) => group.brands);
 
   return (
     <>
@@ -51,17 +52,25 @@ export default function HomePage() {
           </div>
 
           <Carousel
+            key={locale}
             setApi={setCarouselApi}
-            opts={{ align: "center", loop: true }}
+            opts={{
+              align: "center",
+              loop: true,
+              direction: isRtl ? "rtl" : "ltr",
+            }}
             className="mx-8"
           >
             <CarouselContent className="-ml-8">
-              {partnerBrands.map((brand, index) => (
+              {partnerImageFiles.map((image) => (
                 <CarouselItem
-                  key={`${brand}-${index}`}
-                  className="basis-full pl-4 sm:basis-1/2 lg:basis-1/4"
+                  key={image.id}
+                  className="basis-full sm:basis-1/2 lg:basis-1/5"
                 >
-                  <BrandTile name={brand} />
+                  <BrandTile
+                    name={`Partner ${image.id}`}
+                    image={getPartnerImage(image.id - 1)}
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -70,10 +79,10 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-8 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-         <img
-            src={assetPath("/assets/pumps.png")}
-            className="h-80 w-full rounded-lg shadow-2xl border border-slate-900/12 bg-cover bg-center sm:h-105"
-          />
+        <img
+          src={assetPath("/assets/pumps.png")}
+          className="h-80 w-full rounded-lg shadow-2xl border border-slate-900/12 bg-cover bg-center sm:h-105"
+        />
 
         <div>
           <span className="font-sans text-[13px] font-bold tracking-widest text-amber-700">

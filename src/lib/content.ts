@@ -25,8 +25,8 @@ export const dictionary = {
       secondary: "EXPLORE PRODUCTS",
     },
     stats: [
-      { value: "2006", label: "FOUNDED (AS OSUS AL ATHEER)" },
-      { value: "25+", label: "YEARS OF EXPERIENCE" },
+      { value: "2012", label: "FOUNDED (AS OSUS Alroqey)" },
+      { value: "15+", label: "YEARS OF EXPERIENCE" },
       { value: "ISO 9001", label: "QUALITY MANAGEMENT ALIGNED" },
       { value: "KSA", label: "PROJECTS NATIONWIDE" },
     ],

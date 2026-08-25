@@ -1,7 +1,6 @@
 const nextConfig = {
-  output: 'export',
+  output: "export",
   trailingSlash: true,
-  basePath: '/Osus',
   images: {
     unoptimized: true,
   },

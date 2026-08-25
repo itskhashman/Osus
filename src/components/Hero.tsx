@@ -16,9 +16,9 @@ export default function Hero() {
         }`}
       />
 
-      <div className="relative z-1 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-22">
-        <div>
-          <div className="mb-5 flex items-center gap-2.5">
+      <div className="z-1 mx-auto flex max-w-7xl flex-row items-center justify-between gap-12 py-24 lg:py-22">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-2.5">
             <div className="h-0.5 w-8.5 bg-amber-700" />
 
             <span className="font-sans text-[13px] font-bold tracking-widest text-amber-700">
@@ -32,7 +32,7 @@ export default function Hero() {
             <span className="text-amber-700">{t.hero.titleAccent}</span>
           </h1>
 
-          <p className="my-6 mb-8 max-w-130 font-sans text-[17px] leading-[1.6] text-slate-600">
+          <p className="my-8 mb-8 max-w-130 font-sans text-[17px] leading-[1.6] text-slate-600">
             {t.hero.body}
           </p>
 
@@ -47,7 +47,7 @@ export default function Hero() {
         <div>
           <img
             src={assetPath("/assets/hero.png")}
-            className="h-80 w-full rounded-lg shadow-2xl border border-slate-900/12 bg-cover bg-center sm:h-105"
+            className="h-80 w-160 rounded-lg shadow-2xl border border-slate-900/12 bg-cover bg-center sm:h-105"
           />
         </div>
       </div>

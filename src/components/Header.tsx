@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-[#f4f1eb]/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-8 py-5">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-5 sm:px-6 lg:gap-8 lg:px-8">
         <Link href="/" aria-label="OSUS home" className="flex items-center">
           <img
             src={assetPath("/assets/osus-logo-clear.png")}
@@ -37,7 +37,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 font-sans text-base font-bold md:flex">
+        <nav className="hidden items-center gap-4 font-sans text-base font-bold lg:gap-8 md:flex">
           {NAV.map(({ key, href }) => {
             const active =
               href === "/" ? pathname === "/" : pathname.startsWith(href);
