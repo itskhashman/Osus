@@ -20,7 +20,7 @@ export const dictionary = {
       kicker: "MECHANICAL & ENGINEERING SOLUTIONS",
       titleTop: "YOUR ENGINEERING",
       titleAccent: "SOLUTIONS PARTNER",
-      body: "OSUS Alroqey Ltd. Co. designs, selects, supplies and installs pumps, valves, control systems and complete HVAC solutions across Saudi Arabia — backed by over 25 years of engineering experience.",
+      body: "OSUS Alroqey Ltd. Co., with its highly professional and experienced team, designs, selects, supplies and installs pumps, valves, control systems, accessories and complete HVAC solutions. We also act as a third party for HVAC Testing, Adjusting and Balancing (TAB) of air and water systems, as well as providing MEP design, shop drawings and as-built drawings across Saudi Arabia, backed by over 15 years of engineering experience.",
       primary: "REQUEST A QUOTE",
       secondary: "EXPLORE PRODUCTS",
     },

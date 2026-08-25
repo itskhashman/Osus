@@ -27,9 +27,9 @@
 
   --header-bg: rgba(244, 241, 235, 0.94);
 
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-arabic: 'Noto Kufi Arabic', 'Inter', sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-arabic: "Noto Kufi Arabic", "Inter", sans-serif;
 }
 
 /* Map existing Tailwind classes to the OSUS colour system. */
@@ -70,7 +70,7 @@ body {
   text-wrap: pretty;
 }
 
-html[lang='ar'] body {
+html[lang="ar"] body {
   font-family: var(--font-arabic);
 }
 
@@ -117,4 +117,25 @@ textarea::placeholder {
 .diamond {
   flex: none;
   transform: rotate(45deg);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
