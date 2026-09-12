@@ -1,0 +1,244 @@
+{
+  "common": {
+    "contactCta": "CONTACT US",
+    "menu": "MENU",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "toggleNavigation": "Toggle navigation",
+    "homeAriaLabel": "OSUS home"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "partners": "Partners",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "company": "About Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "partnersTitle": "Successful Partners"
+  },
+  "hero": {
+    "kicker": "MECHANICAL & ENGINEERING SOLUTIONS",
+    "titleTop": "YOUR ENGINEERING",
+    "titleAccent": "SOLUTIONS PARTNER",
+    "body": "OSUS Alroqey Ltd. Co., with its highly professional and experienced team, designs, selects, supplies and installs pumps, valves, control systems, accessories and complete HVAC solutions. We also act as a third party for HVAC Testing, Adjusting and Balancing (TAB) of air and water systems, as well as providing MEP design, shop drawings and as-built drawings across Saudi Arabia, backed by over 15 years of engineering experience.",
+    "primary": "REQUEST A QUOTE",
+    "secondary": "EXPLORE PRODUCTS"
+  },
+  "stats": {
+    "founded": "FOUNDED (AS OSUS Alroqey)",
+    "experience": "YEARS OF EXPERIENCE",
+    "quality": "QUALITY MANAGEMENT ALIGNED",
+    "reach": "PROJECTS NATIONWIDE"
+  },
+  "company": {
+    "kicker": "ABOUT US",
+    "title": "Engineering partners since 2006",
+    "body": "OSUS Alroqey Ltd. Co. is a specialized mechanical systems company established in 2024, carrying forward OSUS Al Atheer, founded in 2006. Our divisions cover Pumps & Valves and full-scope HVAC engineering, from design through installation and commissioning.",
+    "quote": "Our vision is for excellence in delivery to be a natural, integral part of our culture — a right-first-time mindset in everything we do.",
+    "quoteAuthor": "MOHAMMED AL DABBAS — GENERAL MANAGER"
+  },
+  "products": {
+    "kicker": "PRODUCTS",
+    "title": "Equipment we supply",
+    "body": "Sourced from leading global manufacturers and tailored to your application by our technical team.",
+    "items": {
+      "pumps": {
+        "name": "Pumps",
+        "description": "Water supply, wastewater, irrigation, HVAC, firefighting, industrial and dewatering pumps."
+      },
+      "valves": {
+        "name": "Valves",
+        "description": "Full range of industrial valves matched to application and pressure requirements."
+      },
+      "panels": {
+        "name": "Control Panels",
+        "description": "Pump and system control panels engineered for reliability and monitoring."
+      },
+      "meters": {
+        "name": "Flow Meters",
+        "description": "Precision flow measurement instruments for critical process lines."
+      },
+      "accessories": {
+        "name": "Accessories",
+        "description": "Pressure gauges, temperature gauges, pressure transmitters and level sensors."
+      }
+    }
+  },
+  "services": {
+    "title": "From design to commissioning",
+    "body": "Complete mechanical engineering services from design and supply to installation, testing and commissioning.",
+    "columns": {
+      "supply": {
+        "heading": "Supply & Installation",
+        "items": {
+          "pumpRooms": {
+            "title": "Pumps / Pump Rooms",
+            "description": "Selection, supply and installation of complete pump room solutions."
+          },
+          "hvac": {
+            "title": "HVAC",
+            "description": "Full-scope supply and installation of HVAC systems."
+          },
+          "odorControl": {
+            "title": "Odor Control Systems",
+            "description": "Engineered odor control solutions for treatment facilities."
+          }
+        }
+      },
+      "engineering": {
+        "heading": "Engineering",
+        "items": {
+          "mepDesign": {
+            "title": "MEP Design",
+            "description": "Mechanical, electrical and plumbing design services."
+          },
+          "shopDrawings": {
+            "title": "Shop Drawings",
+            "description": "Detailed shop drawings for construction and installation."
+          },
+          "asBuiltDrawings": {
+            "title": "As-Built Drawings",
+            "description": "Accurate as-built documentation on project completion."
+          }
+        }
+      },
+      "testing": {
+        "heading": "Testing, Balancing & Adjusting",
+        "items": {
+          "balancing": {
+            "title": "Air & Water Balancing",
+            "description": "Balancing flow rates across systems to achieve design performance."
+          },
+          "performance": {
+            "title": "Performance Testing",
+            "description": "Testing and verification of pump and HVAC system performance."
+          },
+          "commissioning": {
+            "title": "Commissioning & Handover",
+            "description": "Final adjusting and documented handover to the owner."
+          }
+        }
+      }
+    }
+  },
+  "partners": {
+    "title": "Trusted global brands",
+    "body": "We partner with leading global manufacturers to provide reliable, high-quality equipment for every application.",
+    "logoWallTitle": "Our partner network",
+    "logoAlt": "Partner {id}",
+    "groups": {
+      "pumps": "Pumps",
+      "valves": "Valves",
+      "panels": "Control Panels",
+      "meters": "Flow Meters"
+    }
+  },
+  "projects": {
+    "title": "Selected work",
+    "body": "Explore selected projects delivered by our engineering teams across Saudi Arabia.",
+    "loadMore": "LOAD MORE PROJECTS",
+    "sectors": {
+      "all": "All sectors",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial",
+      "water": "Water & Wastewater"
+    },
+    "status": {
+      "preQualified": "PRE-QUALIFIED SUPPLIER",
+      "completed": "COMPLETED",
+      "inProgress": "IN PROGRESS"
+    },
+    "items": {
+      "sedra1b": {
+        "name": "Riyadh Sedra Township — Phase 1B",
+        "meta": "ROSHN Group · HG Hanmi Global Saudi · Zuhaer A. Zahran & Co.",
+        "scope": "Specialized mechanical supply & support"
+      },
+      "wwtpEast": {
+        "name": "Wastewater Treatment Plant — Eastern Province",
+        "meta": "National Water Company · Main Contractor",
+        "scope": "Pumps & odor control systems"
+      },
+      "retailRiyadh": {
+        "name": "Retail Centre — North Riyadh",
+        "meta": "Private developer",
+        "scope": "Full-scope HVAC & commissioning"
+      },
+      "jubailIndustrial": {
+        "name": "Industrial Facility — Jubail",
+        "meta": "General contractor",
+        "scope": "Industrial pumps, valves & control panels"
+      },
+      "jeddahCompound": {
+        "name": "Residential Compound — Jeddah",
+        "meta": "Private developer",
+        "scope": "Pump rooms & firefighting systems"
+      },
+      "qassimIrrigation": {
+        "name": "Irrigation Network — Qassim",
+        "meta": "Government authority",
+        "scope": "Irrigation pumps & flow meters"
+      },
+      "khobarTower": {
+        "name": "Office Tower — Khobar",
+        "meta": "Main contractor",
+        "scope": "MEP design & balancing"
+      },
+      "riyadhFood": {
+        "name": "Food Processing Plant — Riyadh",
+        "meta": "Private owner",
+        "scope": "Sanitary pumps & instrumentation"
+      },
+      "makkahLifting": {
+        "name": "Water Lifting Station — Makkah",
+        "meta": "Government authority",
+        "scope": "Pumps & control panels"
+      }
+    }
+  },
+  "certificates": {
+    "title": "Quality you can verify",
+    "body": "Full legal documentation, approvals and certifications are available on request for pre-qualification.",
+    "items": {
+      "iso9001": "ISO 9001 CERT.",
+      "commercialRegister": "COMMERCIAL REGISTER",
+      "approvalLetter": "APPROVAL LETTER"
+    }
+  },
+  "contact": {
+    "title": "Contact OSUS",
+    "address": "Jeddah, Saudi Arabia",
+    "email": "info@osus-ro.com",
+    "phone": "+966 XX XXX XXXX",
+    "countryCodeLabel": "Country code",
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "message": "Tell us about your project",
+      "send": "SEND MESSAGE"
+    },
+    "success": {
+      "title": "Message sent",
+      "body": "Thank you for contacting OSUS. We will get back to you shortly.",
+      "close": "Close"
+    }
+  },
+  "cta": {
+    "title": "Let's engineer your next project.",
+    "button": "CONTACT OSUS"
+  },
+  "footer": {
+    "tagline": "OSUS Alroqey Ltd. Co. — your engineering solutions partner in pumps, valves, control systems and HVAC.",
+    "company": "ABOUT US",
+    "solutions": "SOLUTIONS",
+    "getInTouch": "GET IN TOUCH",
+    "copyright": "© 2026 OSUS Alroqey Ltd. Co. All rights reserved.",
+    "site": "www.osus-ro.com"
+  }
+}

@@ -51,6 +51,8 @@ function DialogContent({
   children,
   showCloseButton = true,
   ...props
+}: React.ComponentProps<typeof DialogPrimitive.Popup> & {
+  showCloseButton?: boolean;
 }) {
   return (
     <DialogPortal>
@@ -81,7 +83,7 @@ function DialogContent({
 function DialogHeader({
   className = "",
   ...props
-}) {
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
@@ -95,7 +97,7 @@ function DialogFooter({
   showCloseButton = false,
   children,
   ...props
-}) {
+}: React.ComponentProps<"div"> & { showCloseButton?: boolean }) {
   return (
     <div
       data-slot="dialog-footer"
@@ -117,7 +119,7 @@ function DialogFooter({
 function DialogTitle({
   className,
   ...props
-}) {
+}: React.ComponentProps<typeof DialogPrimitive.Title>) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
@@ -129,7 +131,7 @@ function DialogTitle({
 function DialogDescription({
   className,
   ...props
-}) {
+}: React.ComponentProps<typeof DialogPrimitive.Description>) {
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"

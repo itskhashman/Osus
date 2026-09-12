@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -15,15 +16,19 @@
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^1.33.0",
     "next": "15.1.6",
+    "next-intl": "^4.14.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.1.6",
     "tailwindcss": "^4.3.3",
     "typescript": "5.7.3"
   }
