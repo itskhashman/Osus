@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  async redirects() {
-    return [{ source: "/", destination: "/en", permanent: false }];
-  },
 };
 
 const withNextIntl = createNextIntlPlugin();
