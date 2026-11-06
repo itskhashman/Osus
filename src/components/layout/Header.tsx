@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { mainNav } from "@/fixture/navigation";
 import { assetPath } from "@/lib/assetPath";
 import { localImages } from "@/fixture/images";
+import ThemeToggle from "./ThemeToggle";
 import { getAlternateLocale, isRtl, LOCALE_LABELS } from "@/rules/locale";
 
 const linkClass = (active: boolean) =>
@@ -26,7 +27,7 @@ export default function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-[#f4f1eb]/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-slate-900/8 bg-(--header-bg) backdrop-blur-sm">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-5 sm:px-6 lg:gap-8 lg:px-8">
         <Link
           href="/"
@@ -36,7 +37,12 @@ export default function Header() {
           <img
             src={assetPath(localImages.logo)}
             alt="OSUS"
-            className="block h-12 w-auto"
+            className="block h-12 w-auto dark:hidden"
+          />
+          <img
+            src={assetPath(localImages.logoLight)}
+            alt="OSUS"
+            className="hidden h-12 w-auto dark:block"
           />
         </Link>
 
@@ -53,10 +59,12 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
+
           <Link
             href={pathname}
             locale={alternateLocale}
-            className="flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 font-sans text-sm font-bold tracking-[0.03em] !text-white"
+            className="flex items-center gap-2 rounded-full bg-band px-5 py-3 font-sans text-sm font-bold tracking-[0.03em] !text-white"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-amber-700" />
             {LOCALE_LABELS[alternateLocale]}
@@ -64,7 +72,7 @@ export default function Header() {
 
           <Link
             href="/contact"
-            className="hidden rounded-sm bg-amber-700 px-6 py-3.5 font-sans text-sm font-bold leading-none text-slate-900 transition hover:bg-amber-800 hover:text-white! sm:block"
+            className="hidden rounded-sm bg-amber-700 px-6 py-3.5 font-sans text-sm font-bold leading-none text-on-accent transition hover:bg-amber-800 hover:text-white! sm:block"
           >
             {t("common.contactCta")}
           </Link>

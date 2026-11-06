@@ -24,7 +24,7 @@ export default function MessageSentDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="border-amber-700/30 bg-white">
+      <DialogContent className="border-amber-700/30 bg-surface">
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl font-bold text-slate-900">
             {t("title")}
@@ -36,7 +36,7 @@ export default function MessageSentDialog({
         </DialogHeader>
 
         <DialogFooter>
-          <DialogClose className="rounded-sm bg-amber-700 px-5 py-2.5 font-sans text-sm font-bold text-slate-900 hover:bg-amber-800">
+          <DialogClose className="rounded-sm bg-amber-700 px-5 py-2.5 font-sans text-sm font-bold text-on-accent hover:bg-amber-800">
             {t("close")}
           </DialogClose>
         </DialogFooter>

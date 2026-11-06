@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   const item = useTranslations(`projects.items.${project.id}`);
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-sm border border-slate-200 bg-white">
+    <div className="flex flex-col overflow-hidden rounded-sm border border-slate-200 bg-surface">
       <PlaceholderImage
         label={t(`sectors.${project.sector}`)}
         height={170}

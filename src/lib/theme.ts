@@ -1,17 +1,21 @@
+/**
+ * CSS custom properties from globals.css, so inline styles follow the active
+ * light/dark theme instead of baking in the light palette.
+ */
 export const colors = {
-  ink: "#26262F",
-  inkSoft: "#4a4a52",
-  muted: "#6b6a63",
-  subtle: "#8a8578",
-  accent: "#C99A2B",
-  sand: "#F4F1EB",
-  sandDeep: "#EFEBE3",
-  white: "#FFFFFF",
-  onDark: "#c9c6bd",
-  onDarkMuted: "#a9a79f",
-  hairline: "rgba(38,38,47,0.10)",
-  hairlineStrong: "rgba(38,38,47,0.20)",
-  hairlineOnDark: "rgba(255,255,255,0.10)",
+  ink: "var(--ink)",
+  inkSoft: "var(--ink-soft)",
+  muted: "var(--muted)",
+  subtle: "var(--subtle)",
+  accent: "var(--osus-gold)",
+  sand: "var(--sand)",
+  sandDeep: "var(--sand-deep)",
+  white: "var(--white)",
+  onDark: "var(--on-dark)",
+  onDarkMuted: "var(--on-dark-muted)",
+  hairline: "var(--hairline)",
+  hairlineStrong: "var(--hairline-strong)",
+  hairlineOnDark: "var(--hairline-on-dark)",
 };
 
 export const fonts = {

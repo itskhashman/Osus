@@ -10,7 +10,7 @@ export default function Hero() {
   const locale = useLocale() as Locale;
 
   return (
-    <section className="relative overflow-hidden bg-[#f4f1eb] px-8">
+    <section className="relative overflow-hidden bg-page px-8">
       <div
         className={`absolute -top-15 h-55 w-55 rotate-45 bg-amber-700 opacity-90 ${
           isRtl(locale) ? "-left-15" : "-right-15"

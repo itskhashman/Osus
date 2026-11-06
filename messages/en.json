@@ -5,6 +5,8 @@
     "readMore": "Read more",
     "viewAll": "View all",
     "toggleNavigation": "Toggle navigation",
+    "toggleTheme": "Toggle dark mode",
+    "loading": "Loading…",
     "homeAriaLabel": "OSUS home"
   },
   "nav": {

@@ -5,6 +5,8 @@
     "readMore": "اقرأ أكثر",
     "viewAll": "عرض الكل",
     "toggleNavigation": "إظهار القائمة",
+    "toggleTheme": "تبديل الوضع الداكن",
+    "loading": "جارٍ التحميل…",
     "homeAriaLabel": "الصفحة الرئيسية لأسس"
   },
   "nav": {

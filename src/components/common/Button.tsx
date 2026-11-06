@@ -4,10 +4,11 @@ import type { ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 
 const variants = {
-  primary: "bg-amber-700 hover:bg-amber-800 hover:!text-white",
+  primary:
+    "bg-amber-700 !text-on-accent hover:bg-amber-800 hover:!text-white",
   outline:
-    "border-[1.5px] border-slate-900 bg-transparent text-slate-900 hover:bg-slate-900 hover:!text-white",
-  dark: "bg-slate-900 !text-white hover:bg-slate-800 hover:!text-amber-700",
+    "border-[1.5px] border-slate-900 bg-transparent text-slate-900 hover:bg-slate-900 hover:!text-page",
+  dark: "bg-band !text-white hover:bg-band-raised hover:!text-amber-700",
   ghost: "",
 };
 

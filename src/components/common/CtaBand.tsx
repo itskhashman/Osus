@@ -7,7 +7,7 @@ export default function CtaBand() {
   return (
     <section className="bg-amber-700 px-8 py-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6">
-        <h2 className="font-serif text-[30px] text-slate-900">{t("title")}</h2>
+        <h2 className="font-serif text-[30px] text-on-accent">{t("title")}</h2>
 
         <Button href="/contact" variant="dark">
           {t("button")}

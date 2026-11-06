@@ -6,7 +6,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const t = useTranslations(`products.items.${product.slug}`);
 
   return (
-    <div className="overflow-hidden rounded-sm border border-slate-200 bg-white">
+    <div className="overflow-hidden rounded-sm border border-slate-200 bg-surface">
       <img
         src={assetPath(product.image)}
         alt={t("name")}

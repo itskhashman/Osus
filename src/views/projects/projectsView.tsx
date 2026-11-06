@@ -36,7 +36,7 @@ export default function ProjectsView() {
             <button
               type="button"
               onClick={showMore}
-              className="rounded-sm border-[1.5px] border-slate-900 bg-transparent px-7.5 py-3.75 font-sans text-[13px] font-bold tracking-[0.04em] text-slate-900 transition hover:bg-slate-900 hover:text-white"
+              className="rounded-sm border-[1.5px] border-slate-900 bg-transparent px-7.5 py-3.75 font-sans text-[13px] font-bold tracking-[0.04em] text-slate-900 transition hover:bg-slate-900 hover:text-page"
             >
               {t("loadMore")}
             </button>

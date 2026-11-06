@@ -25,8 +25,8 @@ export default function SectorFilter({ value, onChange }: SectorFilterProps) {
             className={[
               "rounded-full border px-4 py-2.25 font-sans text-xs font-bold tracking-[0.04em] transition",
               isActive
-                ? "border-slate-900 bg-slate-900 text-white"
-                : "border-slate-300 bg-transparent text-slate-900 hover:bg-slate-100",
+                ? "border-slate-900 bg-slate-900 text-page"
+                : "border-line-strong bg-transparent text-slate-900 hover:bg-slate-100",
             ].join(" ")}
           >
             {t(sector)}

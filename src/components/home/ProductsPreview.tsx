@@ -7,7 +7,7 @@ export default function ProductsPreview() {
   const t = useTranslations();
 
   return (
-    <section className="bg-white px-8 py-20">
+    <section className="bg-surface px-8 py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
