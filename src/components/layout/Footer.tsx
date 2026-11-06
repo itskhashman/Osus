@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { footerCompanyNav, footerSolutionsNav } from "@/fixture/navigation";
 import { localImages } from "@/fixture/images";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 
 const linksClass =
   "font-sans text-[13px] !text-white/80 transition hover:!text-[var(--osus-gold)]";
@@ -14,9 +14,11 @@ export default function Footer() {
     <footer className="bg-band px-8 pb-8 pt-17.5">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
-          <img
-            src={assetPath(localImages.logoLight)}
+          <OptimizedImage
+            src={localImages.logoLight}
             alt="OSUS"
+            placeholder="empty"
+            sizes="128px"
             className="mb-4 block h-9.5 w-auto"
           />
 

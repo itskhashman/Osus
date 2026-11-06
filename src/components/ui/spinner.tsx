@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentProps } from "react";
 
 import { localImages } from "@/fixture/images";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 import { cn } from "@/lib/utils";
 
 const spinnerVariants = cva(
@@ -42,15 +42,19 @@ function Spinner({ className, size, label, ...props }: SpinnerProps) {
       <span className="absolute inset-0 rounded-full border-2 border-transparent border-t-amber-700 border-r-amber-700 animate-spin motion-reduce:animate-[spin_2.5s_linear_infinite]" />
 
       {/* Light logo in dark mode, regular logo otherwise */}
-      <img
-        src={assetPath(localImages.logo)}
+      <OptimizedImage
+        src={localImages.logo}
         alt=""
-        className="w-[72%] animate-pulse motion-reduce:animate-none dark:hidden"
+        placeholder="empty"
+        sizes="128px"
+        className="h-auto w-[72%] animate-pulse motion-reduce:animate-none dark:hidden"
       />
-      <img
-        src={assetPath(localImages.logoLight)}
+      <OptimizedImage
+        src={localImages.logoLight}
         alt=""
-        className="hidden w-[72%] animate-pulse motion-reduce:animate-none dark:block"
+        placeholder="empty"
+        sizes="128px"
+        className="hidden h-auto w-[72%] animate-pulse motion-reduce:animate-none dark:block"
       />
 
       <span className="sr-only">{label}</span>

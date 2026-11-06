@@ -4,3 +4,7 @@ out
 .env*.local
 .DS_Store
 *.tsbuildinfo
+
+# next-image-export-optimizer build output
+nextImageExportOptimizer/
+next-image-export-optimizer-hashes.json

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import type { Locale } from "@/domain/locale";
 import { Link, usePathname } from "@/i18n/navigation";
 import { mainNav } from "@/fixture/navigation";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 import { localImages } from "@/fixture/images";
 import ThemeToggle from "./ThemeToggle";
 import { getAlternateLocale, isRtl, LOCALE_LABELS } from "@/rules/locale";
@@ -34,14 +34,20 @@ export default function Header() {
           aria-label={t("common.homeAriaLabel")}
           className="flex items-center"
         >
-          <img
-            src={assetPath(localImages.logo)}
+          <OptimizedImage
+            src={localImages.logo}
             alt="OSUS"
+            priority
+            placeholder="empty"
+            sizes="160px"
             className="block h-12 w-auto dark:hidden"
           />
-          <img
-            src={assetPath(localImages.logoLight)}
+          <OptimizedImage
+            src={localImages.logoLight}
             alt="OSUS"
+            priority
+            placeholder="empty"
+            sizes="160px"
             className="hidden h-12 w-auto dark:block"
           />
         </Link>
