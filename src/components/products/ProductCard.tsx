@@ -1,17 +1,18 @@
 import { useTranslations } from "next-intl";
 import type { Product } from "@/domain/product";
-import OptimizedImage from "@/components/common/OptimizedImage";
+import LoadingImage from "@/components/common/LoadingImage";
 
 export default function ProductCard({ product }: { product: Product }) {
   const t = useTranslations(`products.items.${product.slug}`);
 
   return (
     <div className="overflow-hidden rounded-sm border border-slate-200 bg-surface">
-      <OptimizedImage
+      <LoadingImage
         src={product.image}
         alt={t("name")}
         sizes="(min-width: 1024px) 320px, (min-width: 768px) 50vw, 100vw"
-        className="h-80 w-full border border-slate-900/12 object-cover sm:h-56"
+        className="h-80 w-full border border-slate-900/12 sm:h-56"
+        imageClassName="object-cover"
       />
 
       <div className="p-6">
