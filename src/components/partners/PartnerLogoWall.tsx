@@ -1,3 +1,4 @@
+import OptimizedImage from "@/components/common/OptimizedImage";
 import { useTranslations } from "next-intl";
 import { partnerLogos } from "@/fixture/partners";
 import { getPartnerLogoSrc } from "@/rules/partners";
@@ -17,11 +18,16 @@ export default function PartnerLogoWall() {
             key={logo.id}
             className="flex h-24 items-center justify-center overflow-hidden rounded-sm border border-slate-200 bg-white px-4 py-3"
           >
-            <img
-              src={getPartnerLogoSrc(logo)}
-              alt={t("logoAlt", { id: logo.id })}
-              className="h-full max-h-16 w-auto max-w-full object-contain"
-            />
+            <div className="relative h-full max-h-16 w-full">
+              <OptimizedImage
+                src={getPartnerLogoSrc(logo)}
+                alt={t("logoAlt", { id: logo.id })}
+                fill
+                placeholder="empty"
+                sizes="(min-width: 1024px) 200px, (min-width: 640px) 33vw, 50vw"
+                className="object-contain"
+              />
+            </div>
           </div>
         ))}
       </div>

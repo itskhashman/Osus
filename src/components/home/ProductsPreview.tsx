@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { products } from "@/fixture/products";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 
 export default function ProductsPreview() {
   const t = useTranslations();
@@ -34,10 +34,11 @@ export default function ProductsPreview() {
               key={product.slug}
               className="overflow-hidden rounded-sm border border-slate-200"
             >
-              <img
-                src={assetPath(product.image)}
+              <OptimizedImage
+                src={product.image}
                 alt={t(`products.items.${product.slug}.name`)}
-                className="h-20 w-full rounded-sm border border-slate-900/12 bg-cover bg-center sm:h-40"
+                sizes="(min-width: 1024px) 256px, (min-width: 640px) 50vw, 100vw"
+                className="h-20 w-full rounded-sm border border-slate-900/12 object-cover sm:h-40"
               />
 
               <div className="p-5">

@@ -1,17 +1,18 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { localImages } from "@/fixture/images";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 
 export default function CompanyIntro() {
   const t = useTranslations();
 
   return (
     <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-8 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <img
-        src={assetPath(localImages.company)}
+      <OptimizedImage
+        src={localImages.company}
         alt=""
-        className="h-80 w-full rounded-lg border border-slate-900/12 bg-cover bg-center shadow-2xl sm:h-105"
+        sizes="(min-width: 1024px) 560px, 100vw"
+        className="h-80 w-full rounded-lg border border-slate-900/12 object-cover shadow-2xl sm:h-105"
       />
 
       <div>

@@ -2,7 +2,7 @@ import { useLocale, useTranslations } from "next-intl";
 import type { Locale } from "@/domain/locale";
 import Button from "@/components/common/Button";
 import { localImages } from "@/fixture/images";
-import { assetPath } from "@/lib/assetPath";
+import OptimizedImage from "@/components/common/OptimizedImage";
 import { isRtl } from "@/rules/locale";
 
 export default function Hero() {
@@ -46,10 +46,12 @@ export default function Hero() {
         </div>
 
         <div>
-          <img
-            src={assetPath(localImages.hero)}
+          <OptimizedImage
+            src={localImages.hero}
             alt=""
-            className="h-80 w-160 rounded-lg border border-slate-900/12 bg-cover bg-center shadow-2xl sm:h-105"
+            priority
+            sizes="(min-width: 640px) 640px, 100vw"
+            className="h-80 w-160 rounded-lg border border-slate-900/12 object-cover shadow-2xl sm:h-105"
           />
         </div>
       </div>

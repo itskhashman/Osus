@@ -1,10 +1,19 @@
-/** Local assets are resolved through `assetPath()` at the point of use. */
+import type { StaticImageData } from "next/image";
+import hero from "@/assets/hero.png";
+import logo from "@/assets/osus-logo-clear.png";
+import logoLight from "@/assets/osus-logo-light.png";
+import pumps from "@/assets/products/pumps.png";
+
+/**
+ * Bundled images, statically imported so the image component knows their
+ * size (no layout shift) and they get optimized at build time.
+ */
 export const localImages = {
-  hero: "/assets/hero.png",
-  company: "/assets/products/pumps.png",
-  logo: "/assets/osus-logo-clear.png",
-  logoLight: "/assets/osus-logo-light.png",
-};
+  hero,
+  company: pumps,
+  logo,
+  logoLight,
+} satisfies Record<string, StaticImageData>;
 
 /** Remote placeholder imagery, used until brand photography is available. */
 export const remoteImages = {
