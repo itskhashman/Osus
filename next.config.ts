@@ -8,6 +8,19 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  ...(process.env.NODE_ENV === "development" && {
+    async redirects() {
+      return [
+        {
+          source: "/",
+          destination: "/Osus/en/",
+          basePath: false,
+          permanent: false,
+        },
+        { source: "/", destination: "/en/", permanent: false },
+      ];
+    },
+  }),
 };
 
 const withNextIntl = createNextIntlPlugin();
