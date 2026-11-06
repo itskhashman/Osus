@@ -21,7 +21,7 @@ export default function CompanyView() {
             {t("body")}
           </p>
 
-          <blockquote className="mt-7 flex flex-col gap-4 border-s-amber-700 bg-white px-7 py-6">
+          <blockquote className="mt-7 flex flex-col gap-4 border-s-amber-700 bg-surface px-7 py-6">
             <p className="font-sans text-base font-medium italic leading-[1.6] text-slate-900">
               &ldquo;{t("quote")}&rdquo;
             </p>

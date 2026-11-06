@@ -9,7 +9,7 @@ export default function CertificateCard({
   const t = useTranslations("certificates.items");
 
   return (
-    <div className="overflow-hidden rounded-sm border border-slate-200 bg-white">
+    <div className="overflow-hidden rounded-sm border border-slate-200 bg-surface">
       <div
         className="h-55 w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${certificate.image})` }}

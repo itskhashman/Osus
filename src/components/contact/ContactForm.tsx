@@ -6,7 +6,7 @@ import { countryCodes } from "@/fixture/countryCodes";
 import type { ChangeEvent, FormEvent } from "react";
 
 const fieldClass =
-  "rounded-sm border border-slate-300 p-3.5 font-sans text-sm outline-none transition focus:border-amber-700 focus:ring-1 focus:ring-amber-700";
+  "rounded-sm border border-line-strong bg-transparent p-3.5 font-sans text-sm outline-none transition focus:border-amber-700 focus:ring-1 focus:ring-amber-700";
 
 type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 
@@ -28,7 +28,7 @@ export default function ContactForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col gap-4 rounded-sm border border-slate-200 bg-white p-9"
+      className="flex flex-col gap-4 rounded-sm border border-slate-200 bg-surface p-9"
     >
       <input
         type="text"
@@ -52,7 +52,7 @@ export default function ContactForm({
           autoComplete="tel-country-code"
           value={values.countryCode}
           onChange={onChange("countryCode")}
-          className={`${fieldClass} w-28 shrink-0 bg-white`}
+          className={`${fieldClass} w-28 shrink-0 bg-surface`}
         >
           {countryCodes.map((country) => (
             <option key={country.code} value={country.code}>

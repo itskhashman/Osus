@@ -24,7 +24,7 @@ export default function PartnersCarousel() {
   useAutoAdvance(carouselApi, ADVANCE_INTERVAL_MS);
 
   return (
-    <section className="border-y border-slate-200 bg-slate-50 px-8 py-6">
+    <section className="border-y border-slate-200 bg-slate-100 px-8 py-6">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex items-center justify-center gap-4">
           <h2 className="mt-3 font-serif text-4xl font-bold text-slate-900">

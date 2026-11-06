@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import ThemeProvider from "@/components/common/ThemeProvider";
 import { getDirection } from "@/rules/locale";
 
 export const metadata: Metadata = {
@@ -36,7 +37,8 @@ export default async function LocaleLayout({
   const dir = getDirection(locale as Locale);
 
   return (
-    <html lang={locale} dir={dir}>
+    // next-themes sets the theme class on <html> before hydration.
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -50,15 +52,17 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <ScrollReveal>
-            <Header />
-          </ScrollReveal>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <ScrollReveal>
+              <Header />
+            </ScrollReveal>
 
-          <main>{children}</main>
+            <main>{children}</main>
 
-          <Footer />
-        </NextIntlClientProvider>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

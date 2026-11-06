@@ -11,7 +11,7 @@ export default function Footer() {
   const t = useTranslations();
 
   return (
-    <footer className="bg-slate-900 px-8 pb-8 pt-17.5">
+    <footer className="bg-band px-8 pb-8 pt-17.5">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
           <img

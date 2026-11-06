@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* next-themes puts `class="dark"` on <html>; drive Tailwind's `dark:` from it. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --osus-gold: #c99a2b;
   --osus-gold-deep: #b8860b;
@@ -27,9 +30,45 @@
 
   --header-bg: rgba(244, 241, 235, 0.94);
 
+  /* Card / panel surface sitting on the page background. */
+  --surface: #ffffff;
+  /* Bands that stay dark in both themes (footer, stats, dark buttons). */
+  --band: #26262f;
+  --band-raised: #32323d;
+  /* Text on gold backgrounds — gold is light in both themes, so always ink. */
+  --on-accent: #26262f;
+
   --font-display: "Barlow Condensed", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-arabic: "Noto Kufi Arabic", "Inter", sans-serif;
+
+  color-scheme: light;
+}
+
+/* Dark theme: only the tokens that change. `--white` stays white because
+   `text-white` sits on gold and dark bands; light cards use `bg-surface`. */
+.dark {
+  --ink: #ece9e2;
+  --ink-raised: #dcd9d1;
+  --ink-soft: #c9c6bd;
+  --muted: #a9a79f;
+  --subtle: #8f8a7e;
+
+  --sand: #17171c;
+  --sand-deep: #222229;
+  --surface: #1e1e24;
+
+  --band: #0e0e12;
+  --band-raised: #1a1a20;
+
+  --hairline: rgba(236, 233, 226, 0.1);
+  --hairline-mid: rgba(236, 233, 226, 0.12);
+  --hairline-strong: rgba(236, 233, 226, 0.22);
+  --hairline-header: rgba(236, 233, 226, 0.08);
+
+  --header-bg: rgba(23, 23, 28, 0.94);
+
+  color-scheme: dark;
 }
 
 /* Map existing Tailwind classes to the OSUS colour system. */
@@ -48,6 +87,13 @@
   --color-slate-100: var(--sand-deep);
 
   --color-white: var(--white);
+
+  --color-page: var(--sand);
+  --color-surface: var(--surface);
+  --color-band: var(--band);
+  --color-band-raised: var(--band-raised);
+  --color-on-accent: var(--on-accent);
+  --color-line-strong: var(--hairline-strong);
   --font-serif: var(--font-display);
   --font-sans: var(--font-body);
 }

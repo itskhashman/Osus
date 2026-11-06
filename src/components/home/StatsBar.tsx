@@ -36,7 +36,7 @@ export default function StatsBar() {
   const t = useTranslations("stats");
 
   return (
-    <section className="bg-slate-900 px-8 py-9">
+    <section className="bg-band px-8 py-9">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 text-center md:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.id}>
