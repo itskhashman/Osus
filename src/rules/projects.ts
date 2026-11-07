@@ -4,10 +4,8 @@ import type {
   ServiceFilterValue,
 } from "@/domain/project";
 
-/** Main-project cards added per "load more". */
-export const FEATURED_PAGE_SIZE = 9;
+export const FEATURED_PAGE_SIZE = 6;
 
-/** Rows per page in the references table. */
 export const TABLE_PAGE_SIZE = 10;
 
 export const SERVICE_FILTERS: ServiceFilterValue[] = [
@@ -29,9 +27,8 @@ const SERVICE_PATTERNS: Record<ProjectService, RegExp> = {
 };
 
 export function getProjectServices(project: Project): ProjectService[] {
-  return (Object.keys(SERVICE_PATTERNS) as ProjectService[]).filter(
-    (service) =>
-      project.scopes.some((scope) => SERVICE_PATTERNS[service].test(scope)),
+  return (Object.keys(SERVICE_PATTERNS) as ProjectService[]).filter((service) =>
+    project.scopes.some((scope) => SERVICE_PATTERNS[service].test(scope)),
   );
 }
 
