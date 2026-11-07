@@ -263,12 +263,6 @@
       "issuer": "Issued by",
       "scope": "Scope"
     },
-    "dates": {
-      "issued": "Issue date",
-      "surveillanceExpiry": "Surveillance / expiry date",
-      "recertification": "Recertification date",
-      "expiry": "Expiry date"
-    },
     "items": {
       "iso9001": {
         "title": "ISO 9001:2015",

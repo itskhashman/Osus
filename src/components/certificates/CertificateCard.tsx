@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useFormatter, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import type { Certificate } from "@/domain/certificate";
 import LoadingImage from "@/components/common/LoadingImage";
 import OptimizedImage from "@/components/common/OptimizedImage";
@@ -22,19 +22,10 @@ export default function CertificateCard({
 }) {
   const t = useTranslations("certificates");
   const item = useTranslations(`certificates.items.${certificate.id}`);
-  const format = useFormatter();
-
-  const formatDate = (date: string) =>
-    format.dateTime(new Date(date), { dateStyle: "long", timeZone: "UTC" });
-
   const details = [
     { label: t("fields.number"), value: certificate.number },
     { label: t("fields.holder"), value: item("holder") },
     { label: t("fields.issuer"), value: item("issuer") },
-    ...certificate.dates.map(({ kind, date }) => ({
-      label: t(`dates.${kind}`),
-      value: formatDate(date),
-    })),
   ];
 
   return (

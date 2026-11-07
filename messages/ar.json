@@ -263,12 +263,6 @@
       "issuer": "جهة الإصدار",
       "scope": "النطاق"
     },
-    "dates": {
-      "issued": "تاريخ الإصدار",
-      "surveillanceExpiry": "تاريخ المراقبة / الانتهاء",
-      "recertification": "تاريخ إعادة الاعتماد",
-      "expiry": "تاريخ الانتهاء"
-    },
     "items": {
       "iso9001": {
         "title": "ISO 9001:2015",
