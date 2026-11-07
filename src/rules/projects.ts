@@ -74,3 +74,11 @@ export function getPageItems(
 
   return items;
 }
+
+/** Message key for a source-text value, e.g. "KAEC - Rabigh" → "kaec-rabigh". */
+export function toMessageKey(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}

@@ -1002,7 +1002,7 @@ export const projects: Project[] = [
   {
     id: "taleed-farm-tabarja",
     name: "Taleed Farm",
-    location: "Tabarja",
+    location: "Tabarjal",
     endUser: "Mena Drip Co.",
     consultant: "Mena Drip",
     contractor: "OSUS Al Roqey Ltd. Co.",

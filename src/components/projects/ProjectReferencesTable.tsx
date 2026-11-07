@@ -20,6 +20,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getPageItems } from "@/rules/projects";
+import { useProjectText } from "@/services/projects/useProjectText";
 
 type ProjectReferencesTableProps = {
   rows: Project[];
@@ -37,6 +38,7 @@ export default function ProjectReferencesTable({
   onPageChange,
 }: ProjectReferencesTableProps) {
   const t = useTranslations("projects");
+  const text = useProjectText();
 
   return (
     <div className="flex flex-col gap-6">
@@ -66,7 +68,7 @@ export default function ProjectReferencesTable({
                   {project.name}
                 </TableCell>
                 <TableCell className="whitespace-nowrap">
-                  {project.location || EMPTY}
+                  {project.location ? text.location(project) : EMPTY}
                 </TableCell>
                 <TableCell className="min-w-40">
                   {project.endUser || EMPTY}
@@ -78,7 +80,7 @@ export default function ProjectReferencesTable({
                   {project.contractor || EMPTY}
                 </TableCell>
                 <TableCell className="min-w-48">
-                  {project.scopes.join(" · ") || EMPTY}
+                  {project.scopes.map(text.scope).join(" · ") || EMPTY}
                 </TableCell>
               </TableRow>
             ))

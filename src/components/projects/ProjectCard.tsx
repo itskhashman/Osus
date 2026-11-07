@@ -2,9 +2,11 @@ import { useTranslations } from "next-intl";
 import type { Project } from "@/domain/project";
 import PlaceholderImage from "@/components/common/PlaceholderImage";
 import { getProjectServices } from "@/rules/projects";
+import { useProjectText } from "@/services/projects/useProjectText";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const t = useTranslations("projects");
+  const text = useProjectText();
   const [mainService] = getProjectServices(project);
 
   const parties = [
@@ -24,7 +26,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-1 flex-col gap-2 p-6">
         {project.location && (
           <span className="font-sans text-[11px] font-bold tracking-[0.08em] text-amber-700 uppercase">
-            {project.location}
+            {text.location(project)}
           </span>
         )}
 
@@ -56,7 +58,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 key={scope}
                 className="rounded-full border border-amber-700/30 px-2.5 py-1 font-sans text-[11px] font-semibold text-slate-700"
               >
-                {scope}
+                {text.scope(scope)}
               </li>
             ))}
           </ul>
