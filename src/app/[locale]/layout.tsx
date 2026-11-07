@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import type { Locale } from "@/domain/locale";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/layout/Footer";
@@ -11,11 +15,19 @@ import ScrollReveal from "@/components/common/ScrollReveal";
 import ThemeProvider from "@/components/common/ThemeProvider";
 import { getDirection } from "@/rules/locale";
 
-export const metadata: Metadata = {
-  title: "OSUS Alroqey Ltd. Co. — Your Engineering Solutions Partner",
-  description:
-    "Pumps, valves, control systems and complete HVAC solutions across Saudi Arabia. Over 25 years of mechanical engineering experience.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
