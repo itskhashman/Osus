@@ -48,6 +48,9 @@ npm run lint
 - Everything lives under `/Osus`. `.env` (committed) sets
   `NEXT_PUBLIC_BASE_PATH=/Osus`; it must always match `basePath` in
   `next.config.ts`.
+- Plain links to files in `public/` (e.g. PDF downloads) need the prefix:
+  `withBasePath("/certificates/x.pdf")` from `@/lib/basePath`. `Link` and
+  OptimizedImage add it themselves.
 
 ## Images
 
