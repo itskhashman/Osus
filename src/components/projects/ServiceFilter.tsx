@@ -1,27 +1,28 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import type { SectorFilterValue } from "@/domain/project";
-import { SECTOR_FILTERS } from "@/rules/projects";
+import type { ServiceFilterValue } from "@/domain/project";
+import { SERVICE_FILTERS } from "@/rules/projects";
 
-type SectorFilterProps = {
-  value: SectorFilterValue;
-  onChange: (sector: SectorFilterValue) => void;
+type ServiceFilterProps = {
+  value: ServiceFilterValue;
+  onChange: (service: ServiceFilterValue) => void;
 };
 
-export default function SectorFilter({ value, onChange }: SectorFilterProps) {
-  const t = useTranslations("projects.sectors");
+export default function ServiceFilter({ value, onChange }: ServiceFilterProps) {
+  const t = useTranslations("projects.services");
 
   return (
     <div className="mb-8 flex flex-wrap gap-2.5">
-      {SECTOR_FILTERS.map((sector) => {
-        const isActive = sector === value;
+      {SERVICE_FILTERS.map((service) => {
+        const isActive = service === value;
 
         return (
           <button
-            key={sector}
+            key={service}
             type="button"
-            onClick={() => onChange(sector)}
+            onClick={() => onChange(service)}
+            aria-pressed={isActive}
             className={[
               "rounded-full border px-4 py-2.25 font-sans text-xs font-bold tracking-[0.04em] transition",
               isActive
@@ -29,7 +30,7 @@ export default function SectorFilter({ value, onChange }: SectorFilterProps) {
                 : "border-line-strong bg-transparent text-slate-900 hover:bg-slate-100",
             ].join(" ")}
           >
-            {t(sector)}
+            {t(service)}
           </button>
         );
       })}

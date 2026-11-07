@@ -1,31 +1,58 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { SectorFilterValue } from "@/domain/project";
+import type { ServiceFilterValue } from "@/domain/project";
 import { projects } from "@/fixture/projects";
-import { filterProjectsBySector, PROJECTS_PAGE_SIZE } from "@/rules/projects";
+import {
+  FEATURED_PAGE_SIZE,
+  filterProjectsByService,
+  getPageCount,
+  TABLE_PAGE_SIZE,
+} from "@/rules/projects";
+
+const featuredProjects = projects.filter((project) => project.featured);
+const referenceProjects = projects.filter((project) => !project.featured);
 
 export function useProjectList() {
-  const [sector, setSector] = useState<SectorFilterValue>("all");
-  const [shown, setShown] = useState(PROJECTS_PAGE_SIZE);
+  const [service, setService] = useState<ServiceFilterValue>("all");
+  const [shown, setShown] = useState(FEATURED_PAGE_SIZE);
+  const [page, setPage] = useState(1);
 
-  const filtered = useMemo(
-    () => filterProjectsBySector(projects, sector),
-    [sector],
+  const featured = useMemo(
+    () => filterProjectsByService(featuredProjects, service),
+    [service],
+  );
+  const references = useMemo(
+    () => filterProjectsByService(referenceProjects, service),
+    [service],
   );
 
-  const selectSector = (next: SectorFilterValue) => {
-    setSector(next);
-    setShown(PROJECTS_PAGE_SIZE);
+  const pageCount = getPageCount(references.length, TABLE_PAGE_SIZE);
+
+  const selectService = (next: ServiceFilterValue) => {
+    setService(next);
+    setShown(FEATURED_PAGE_SIZE);
+    setPage(1);
   };
 
-  const showMore = () => setShown((count) => count + PROJECTS_PAGE_SIZE);
-
   return {
-    sector,
-    selectSector,
-    visible: filtered.slice(0, shown),
-    hasMore: filtered.length > shown,
-    showMore,
+    service,
+    selectService,
+    featured: {
+      visible: featured.slice(0, shown),
+      hasMore: featured.length > shown,
+      showMore: () => setShown((count) => count + FEATURED_PAGE_SIZE),
+    },
+    references: {
+      total: references.length,
+      rows: references.slice(
+        (page - 1) * TABLE_PAGE_SIZE,
+        page * TABLE_PAGE_SIZE,
+      ),
+      page,
+      pageCount,
+      goToPage: (next: number) =>
+        setPage(Math.min(Math.max(next, 1), pageCount)),
+    },
   };
 }
