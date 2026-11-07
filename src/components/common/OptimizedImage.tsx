@@ -1,8 +1,8 @@
 import ExportedImage, {
   type ExportedImageProps,
 } from "next-image-export-optimizer";
+import { BASE_PATH } from "@/lib/basePath";
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const IS_DEV = process.env.NODE_ENV === "development";
 
 export type OptimizedImageProps = Omit<ExportedImageProps, "basePath">;

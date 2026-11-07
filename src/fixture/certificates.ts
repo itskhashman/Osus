@@ -1,19 +1,22 @@
 import type { Certificate } from "@/domain/certificate";
+import iso9001 from "@/assets/certificates/iso-9001-2015.jpg";
+import nebbTab from "@/assets/certificates/nebb-tab-technician.jpg";
 
 export const certificates: Certificate[] = [
   {
     id: "iso9001",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop",
+    image: iso9001,
+    number: "AMER401824",
+    dates: [
+      { kind: "issued", date: "2026-06-24" },
+      { kind: "surveillanceExpiry", date: "2027-06-23" },
+      { kind: "recertification", date: "2029-06-23" },
+    ],
   },
   {
-    id: "commercialRegister",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop",
-  },
-  {
-    id: "approvalLetter",
-    image:
-      "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=300&fit=crop",
+    id: "nebbTab",
+    image: nebbTab,
+    number: "CT-22784",
+    dates: [{ kind: "expiry", date: "2025-12-31" }],
   },
 ];

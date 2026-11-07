@@ -255,10 +255,35 @@
   "certificates": {
     "title": "Quality you can verify",
     "body": "Full legal documentation, approvals and certifications are available on request for pre-qualification.",
+    "view": "View certificate",
+    "close": "Close",
+    "fields": {
+      "number": "Certificate no.",
+      "holder": "Certificate holder",
+      "issuer": "Issued by",
+      "scope": "Scope"
+    },
+    "dates": {
+      "issued": "Issue date",
+      "surveillanceExpiry": "Surveillance / expiry date",
+      "recertification": "Recertification date",
+      "expiry": "Expiry date"
+    },
     "items": {
-      "iso9001": "ISO 9001 CERT.",
-      "commercialRegister": "COMMERCIAL REGISTER",
-      "approvalLetter": "APPROVAL LETTER"
+      "iso9001": {
+        "title": "ISO 9001:2015",
+        "subtitle": "Quality Management Systems",
+        "issuer": "AMERICO Quality Standards Registech (IAF accredited)",
+        "holder": "OSUS Alroqey Ltd. Co.",
+        "scope": "Supply, installation, testing, commissioning, operation and maintenance services for pumps, valves, HVAC, mechanical systems and associated accessories, and HVAC testing, adjusting and balancing (TAB)."
+      },
+      "nebbTab": {
+        "title": "NEBB Certified Technician",
+        "subtitle": "Testing, Adjusting and Balancing of Environmental Systems",
+        "issuer": "NEBB",
+        "holder": "Ashraf Bashir Alnour",
+        "scope": "NEBB certified technician status in testing, adjusting and balancing (TAB) of environmental systems."
+      }
     }
   },
   "contact": {

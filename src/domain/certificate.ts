@@ -1,10 +1,21 @@
-export type CertificateId =
-  | "iso9001"
-  | "commercialRegister"
-  | "approvalLetter";
+import type { StaticImageData } from "next/image";
 
-/** The label lives under `certificates.items.<id>` in the messages. */
+export type CertificateId = "iso9001" | "nebbTab";
+
+export type CertificateDateKind =
+  | "issued"
+  | "surveillanceExpiry"
+  | "recertification"
+  | "expiry";
+
+/**
+ * A certificate as printed on the document. Title, subtitle, issuer, holder
+ * and scope live under `certificates.items.<id>` in the messages.
+ */
 export type Certificate = {
   id: CertificateId;
-  image: string;
+  image: StaticImageData;
+  number: string;
+  /** ISO dates (YYYY-MM-DD) exactly as printed on the certificate. */
+  dates: { kind: CertificateDateKind; date: string }[];
 };
