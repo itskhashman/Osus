@@ -39,6 +39,9 @@ npm run lint
   No server: no middleware, API routes, or runtime redirects in production.
 - `public/index.html` becomes `out/index.html` and redirects `/Osus/` to a
   locale. The dev-only `redirects()` in `next.config.ts` mirror it for `next dev`.
+- **Repo Settings → Pages → Source must be "GitHub Actions".** With "Deploy from
+  a branch", GitHub's own "pages build and deployment" runs Jekyll on the repo
+  and replaces the site with the README (every route 404s, images break).
 
 ## Base path
 
@@ -98,6 +101,12 @@ Path alias: `@/*` → `src/*`.
   `messages/en.json` **and** `messages/ar.json` (keep keys in sync); read it with
   `useTranslations` / `getTranslations`. Never hard-code copy in components.
   Locales: `en` (default), `ar` (RTL via `getDirection` / `isRtl` in `rules/locale.ts`).
+- Keep `ar.json` a full translation of `en.json` — same facts and numbers, not a shorter summary.
+- Page `<title>`/description come from `meta.*` via `generateMetadata` in the locale layout.
+- Data from spreadsheets (projects) stays in its source language in `fixture/`;
+  translatable values (locations, scopes) are looked up in `projects.locations` /
+  `projects.scopes`, keyed by `toMessageKey(sourceText)`, with the source text as
+  fallback (`useProjectText`). Company and project names are proper nouns — not translated.
 - Import `Link`, `usePathname`, `useRouter`, `redirect` from `@/i18n/navigation`,
   not from `next/link` / `next/navigation`.
 - Use logical properties for RTL (`ms-`, `me-`, `ps-`, `border-s-`) rather than left/right where possible.
