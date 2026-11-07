@@ -8,7 +8,13 @@ type BrandTileProps = {
 /** Shows a partner logo when one exists, and falls back to the brand name set in type. */
 export default function BrandTile({ name, image }: BrandTileProps) {
   return (
-    <div className="flex h-36 items-center justify-center overflow-hidden rounded-sm border border-slate-200 bg-white px-4 py-3">
+    // Logo tiles stay white in both themes because the logo files have white
+    // backgrounds; name-only tiles follow the theme so the text stays readable.
+    <div
+      className={`flex h-36 items-center justify-center overflow-hidden rounded-sm border border-slate-200 px-4 py-3 ${
+        image ? "bg-white" : "bg-surface"
+      }`}
+    >
       {image ? (
         <LoadingImage
           src={image}
