@@ -41,7 +41,13 @@ export default function StatsBar() {
         {stats.map((stat) => (
           <div key={stat.id}>
             <div className="font-serif text-[38px] font-extrabold text-amber-700">
-              {stat.animated ? <CountUp value={stat.value} /> : stat.value}
+              {stat.animated ? (
+                <CountUp value={stat.value} />
+              ) : t.has(`values.${stat.id}`) ? (
+                t(`values.${stat.id}`)
+              ) : (
+                stat.value
+              )}
             </div>
 
             <div className="mt-1.5 font-sans text-xs font-semibold tracking-wider text-slate-300">

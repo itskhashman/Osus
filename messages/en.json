@@ -38,7 +38,10 @@
     "founded": "FOUNDED (AS OSUS Alroqey)",
     "experience": "YEARS OF EXPERIENCE",
     "quality": "QUALITY MANAGEMENT ALIGNED",
-    "reach": "PROJECTS NATIONWIDE"
+    "reach": "PROJECTS NATIONWIDE",
+    "values": {
+      "reach": "KSA"
+    }
   },
   "company": {
     "kicker": "ABOUT US",
