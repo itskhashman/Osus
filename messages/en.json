@@ -140,67 +140,41 @@
     }
   },
   "projects": {
-    "title": "Selected work",
-    "body": "Explore selected projects delivered by our engineering teams across Saudi Arabia.",
+    "title": "Our projects",
+    "body": "Main projects and references delivered by OSUS Al Roqey across Saudi Arabia.",
     "loadMore": "LOAD MORE PROJECTS",
-    "sectors": {
-      "all": "All sectors",
-      "residential": "Residential",
-      "commercial": "Commercial",
-      "industrial": "Industrial",
-      "water": "Water & Wastewater"
+    "mainTitle": "Main projects",
+    "referencesTitle": "Project references",
+    "referencesBody": "More projects where we supplied equipment or carried out testing, adjusting and balancing.",
+    "count": "{count, plural, =0 {No projects} one {# project} other {# projects}}",
+    "services": {
+      "all": "All services",
+      "pumps": "Pumps",
+      "valves": "Valves",
+      "tab": "Testing & balancing (TAB)",
+      "engineering": "Engineering & design",
+      "instruments": "Meters & instruments",
+      "other": "Project"
     },
-    "status": {
-      "preQualified": "PRE-QUALIFIED SUPPLIER",
-      "completed": "COMPLETED",
-      "inProgress": "IN PROGRESS"
+    "fields": {
+      "consultant": "Consultant",
+      "contractor": "Contractor"
     },
-    "items": {
-      "sedra1b": {
-        "name": "Riyadh Sedra Township — Phase 1B",
-        "meta": "ROSHN Group · HG Hanmi Global Saudi · Zuhaer A. Zahran & Co.",
-        "scope": "Specialized mechanical supply & support"
-      },
-      "wwtpEast": {
-        "name": "Wastewater Treatment Plant — Eastern Province",
-        "meta": "National Water Company · Main Contractor",
-        "scope": "Pumps & odor control systems"
-      },
-      "retailRiyadh": {
-        "name": "Retail Centre — North Riyadh",
-        "meta": "Private developer",
-        "scope": "Full-scope HVAC & commissioning"
-      },
-      "jubailIndustrial": {
-        "name": "Industrial Facility — Jubail",
-        "meta": "General contractor",
-        "scope": "Industrial pumps, valves & control panels"
-      },
-      "jeddahCompound": {
-        "name": "Residential Compound — Jeddah",
-        "meta": "Private developer",
-        "scope": "Pump rooms & firefighting systems"
-      },
-      "qassimIrrigation": {
-        "name": "Irrigation Network — Qassim",
-        "meta": "Government authority",
-        "scope": "Irrigation pumps & flow meters"
-      },
-      "khobarTower": {
-        "name": "Office Tower — Khobar",
-        "meta": "Main contractor",
-        "scope": "MEP design & balancing"
-      },
-      "riyadhFood": {
-        "name": "Food Processing Plant — Riyadh",
-        "meta": "Private owner",
-        "scope": "Sanitary pumps & instrumentation"
-      },
-      "makkahLifting": {
-        "name": "Water Lifting Station — Makkah",
-        "meta": "Government authority",
-        "scope": "Pumps & control panels"
-      }
+    "table": {
+      "project": "Project",
+      "location": "Location",
+      "endUser": "End user",
+      "consultant": "Consultant",
+      "contractor": "Contractor",
+      "scope": "OSUS scope",
+      "empty": "No projects match this service."
+    },
+    "pagination": {
+      "label": "Project references pages",
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page {page}",
+      "morePages": "More pages"
     }
   },
   "certificates": {
